@@ -1,0 +1,10 @@
+{
+  "polygon": {
+    "base_url": "https://api.polygon.io/v1/open-close",
+    "api_key": "0tp5RJoof30DJ3NhYLMujTYXMqxCXVa0",
+    "stock_ticker_names": ["AAPL","U"]
+  },
+  "frankfurter": {
+    "base_url": "https://api.frankfurter.app"
+  }
+}
