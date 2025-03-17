@@ -186,13 +186,11 @@ def load_date_to_sql_talbe(merged_df):
     logging.info("Data successfully loaded into SQL table.")
 
     return None
-# Main function to extract data from both APIs
-def main():
-    # # Step 1: Initialize Spark Session
-    # spark = create_spark_session()
 
-    # Step 2: Fetch data from APIs
-    # currency_data = fetch_currency_data(base_currency="USD")  # Get exchange rate data
+
+
+def main():
+
     # Extract sample stock data from Polygon.io
     logging.info("Extracting data from Polygon.io Stock API...")
     stock_data = extract_polygon_data()
@@ -209,39 +207,6 @@ def main():
         df_currency=clean_currency_data(currency_data)
         stg_table=join_data(stock_df, df_currency)
         print(stg_table)
-        # print(currency_data)
-        # print(json.dumps(currency_data, indent=4))
-
-        # {
-        #     "AAPL": {
-        #         "2025-03-12": {
-        #             "status": "OK",
-        #             "from": "2025-03-12",
-        #             "symbol": "AAPL",
-        #             "open": 220.14,
-        #             "high": 221.75,
-        #             "low": 214.91,
-        #             "close": 216.98,
-        #             "volume": 61482121.0,
-        #             "afterHours": 217.41,
-        #             "preMarket": 219.8
-        #         }
-        #     },
-        #     "TSLA": {
-        #         "2025-03-12": {
-        #             "status": "OK",
-        #             "from": "2025-03-12",
-        #             "symbol": "TSLA",
-        #             "open": 247.22,
-        #             "high": 251.84,
-        #             "low": 241.1,
-        #             "close": 248.09,
-        #             "volume": 140391349.0,
-        #             "afterHours": 253,
-        #             "preMarket": 235.07
-        #         }
-        #     }
-        # }
 
 if __name__ == "__main__":
     main()
